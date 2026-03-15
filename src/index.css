@@ -1,0 +1,71 @@
+
+body{
+    background: linear-gradient(#55f, #77f);
+    margin: 0;
+    height: 100dvh;
+}
+
+.tasklist{
+    display: grid;
+    grid-template-columns: repeat(2, minmax(150px, 500px));
+    align-items: start;
+}
+
+.elements{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 20px 0px 15px 0px;
+    gap: 20px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    gap: 25px;
+    padding: 15px 0px 30px 0;
+}
+
+input, textarea{
+    width: 70%;
+    background-color: #aaf;
+    padding: 5px;
+    box-shadow: 0px 0px 10px #aaf;
+    border: 2px solid #aaf;
+    color: #fff;
+    z-index: 1;
+}
+
+button{
+    border: 2px solid #aaf;
+    font-weight: 550;
+    background-color: #ccc;
+    filter: drop-shadow(0px 0px 40px #aaf) drop-shadow(0px 0px 60px #aaf);
+    box-shadow: 0px 0px 4px #aaf;
+    border-radius: 15px;
+    padding: 10px;
+}
+
+.save-button{
+    width: 20%;
+}
+
+.delete-button{
+    width: 100px;
+}
+
+h1, p{
+    color: #aaf;
+    margin: 0;
+    font-weight: 800;
+}
+
+input::placeholder,
+textarea::placeholder{
+    color: #fff;
+}
+
+

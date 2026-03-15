@@ -1,0 +1,40 @@
+import React, {createContext, useState, useEffect} from 'react'
+import {tasks as data} from '../data/task'
+
+// eslint-disable-next-line react-refresh/only-export-components
+export const TaskContext = createContext()
+
+export function TaskContextProvider(props) {
+
+  const [tasks, setTasks] = useState([]);
+
+  function createTask(task){
+        setTasks([...tasks, {
+          title: task.title,
+          id: tasks.length,
+          description: task.description
+        }])
+      }
+
+      function deleteTask(taskId){
+        setTasks(tasks.filter(task => task.id !== taskId))
+        alert("Tarea eliminada")
+      }
+
+      useEffect(()=> {
+                // eslint-disable-next-line react-hooks/set-state-in-effect
+                setTasks(data)
+            }, [])
+
+  return (
+    <>
+    <TaskContext.Provider value={{
+      tasks,
+      deleteTask,
+      createTask
+    }}>
+        {props.children}
+    </TaskContext.Provider>
+    </>
+  )
+}
